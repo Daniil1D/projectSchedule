@@ -1,0 +1,125 @@
+﻿<Page x:Class="project.Schedule"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:project" xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1085"
+      Title="Schedule">
+    <Page.Resources>
+        <Style TargetType="Border">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1.1" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1.1" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" Duration="0:0:0.2"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid Background="#fff">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <WrapPanel>
+                <Border MouseEnter="Card_MouseEnter" MouseLeave="Card_MouseLeave" x:Name="border1" BorderBrush="#FF857BB4" BorderThickness="2" Width="250" Height="350" CornerRadius="20" Background="#fff" HorizontalAlignment="Left" Margin="50 20 60 40">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="5" Opacity="0.5"/>
+                </Border.Effect>
+                   
+                    <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Border Grid.Row="0" Background="#FFA27FD9" CornerRadius="20 20 0 0" Opacity="0.8">
+                        <TextBlock Text="Title" FontWeight="Bold" FontSize="18" Margin="10"/>
+                    </Border>
+                        <controls:Calendar Name="calendar" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Height="300"/>
+                    </Grid>
+            </Border>
+               
+                <Border x:Name="border2" MouseEnter="border2_MouseEnter"  MouseLeave="border2_MouseLeave"  BorderBrush="#FF857BB4" BorderThickness="2" Width="650" Height="450" CornerRadius="20" Background="#fff" HorizontalAlignment="Center" Margin="50 20 60 40">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="5" Opacity="0.5"/>
+                </Border.Effect>
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                        <Frame x:Name="Frame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+                        <Border Grid.Row="0" Background="#FFA27FD9" CornerRadius="20 20 0 0" Opacity="0.8">
+                        <TextBlock Text="Title" FontWeight="Bold" FontSize="18" Margin="10"/>
+                    </Border>
+                </Grid>
+            </Border>
+
+                <Border x:Name="border3" MouseEnter="border3_MouseEnter"  MouseLeave="border3_MouseLeave"  BorderBrush="#FF857BB4" BorderThickness="2" Width="250" Height="300" CornerRadius="20" Background="#fff" HorizontalAlignment="Right" Margin="50 20 60 40">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="315" ShadowDepth="5" Opacity="0.5"/>
+                </Border.Effect>
+                <Border.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Border.RenderTransform>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="#FFA27FD9" CornerRadius="20 20 0 0" Opacity="0.8">
+                        <TextBlock Text="Title" FontWeight="Bold" FontSize="18" Margin="10"/>
+                    </Border>
+                </Grid>
+            </Border>
+                <Border x:Name="border13" MouseEnter="border13_MouseEnter"  MouseLeave="border13_MouseLeave"  BorderBrush="#FF857BB4" BorderThickness="2" Width="250" Height="300" CornerRadius="20" Background="#fff" HorizontalAlignment="Left" Margin="50 20 60 40">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" Direction="315" ShadowDepth="5" Opacity="0.5"/>
+                    </Border.Effect>
+                    <Border.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Border.RenderTransform>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Background="#FFA27FD9" CornerRadius="20 20 0 0" Opacity="0.8">
+                            <TextBlock Text="Title" FontWeight="Bold" FontSize="18" Margin="10"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Border Width="200" Height="250" Margin="10" BorderBrush="#2196F3" BorderThickness="2" CornerRadius="5">
+                        <Grid>
+                           
+                            <Ellipse Width="30" Height="30" Fill="#FF5722" HorizontalAlignment="Right" MouseDown="Ellipse_MouseDown" VerticalAlignment="Top" Margin="0,5,5,0">
+
+                            </Ellipse>
+                        </Grid>
+                    </Border>
+
+                    <!-- Другие карточки могут следовать здесь -->
+                </StackPanel>
+            </WrapPanel>
+            
+        </ScrollViewer>
+    </Grid>
+</Page>

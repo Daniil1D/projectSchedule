@@ -1,0 +1,42 @@
+﻿<Window x:Class="project.OknoPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project"
+        mc:Ignorable="d"
+        Title="OknoPage" Height="450" Width="800">
+    <Grid Background="White">
+
+        <DataGrid Name="DGRid" AutoGenerateColumns="False" IsReadOnly="True" Height="400" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Дата" Binding="{Binding DayOfTheWeek}" />
+                <DataGridTextColumn  Header="Начало" Binding="{Binding StartTime}" />
+                <DataGridTextColumn  Header="Предмет1" Binding="{Binding Subject.Name}" />
+                <DataGridTextColumn  Header="Предмет2" Binding="{Binding Subject8.Name}" />
+                <DataGridTextColumn  Header="Предмет3" Binding="{Binding Subject9.Name}" />
+                <DataGridTextColumn  Header="Предмет4" Binding="{Binding Subject10.Name}" />
+                <DataGridTextColumn  Header="Предмет5" Binding="{Binding Subject11.Name}" />
+                <DataGridTextColumn  Header="Предмет6" Binding="{Binding Subject12.Name}" />
+                <DataGridTextColumn  Header="Предмет7" Binding="{Binding Subject13.Name}" />
+                <DataGridTextColumn  Header="Класс" Binding="{Binding Class11.ClassNumber}" />
+                <DataGridTextColumn  Header="Буква" Binding="{Binding Class11.Letter}" />
+                <DataGridTemplateColumn Header="">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <Button  Height="30" Width="30" Style="{StaticResource MetroCircleButton}" x:Name="BtnDelete" Visibility="{Binding AdminControlsVisibility}">
+                                    <Image Source="/Resources/211.png"/>
+                                </Button>
+                                <Button   Height="30" Width="30" Style="{StaticResource MetroCircleButton}" x:Name="Btnedit" Visibility="{Binding AdminControlsVisibility}">
+                                    <Image Source="/Resources/01.png"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+       
+    </Grid>
+</Window>
